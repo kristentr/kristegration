@@ -1,0 +1,5 @@
+
+# Create the runner and start the configuration experience
+$ ./config.sh --url https://github.com/kristentr/kristegration --token BY6TGIRTB5AGSUDVSIHGEALJXNZZG
+# Last step, run it!
+$ ./run.sh
