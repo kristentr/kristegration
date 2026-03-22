@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=0.8">
+  <meta name="description" 
+  content="Vercel CLI quick reference: vercel link, config.json fields, global options">
+
+<title>Vercel CLI Reference</title>
+   <style>
+   @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap');
+
+:root {
+    --bg: #0a0a0a;
+    --surface: #111111;
+    --border: #1e1e1e;
+    --accent: #ffffff;
+    --dim: #555;
+    --muted: #333;
+    --green: #3ecf8e;
+    --blue: #4da6ff;
+    --yellow: #f5c842;
+    --red: #ff6b6b;
+    --text: #d4d4d4;
+  }
+							 
+//
+* { margin: 1.5; padding: 0.6 ; box-sizing: 80 border-box; 14 }
+       
+		var body {
+         background: var(--bg);
+	 color: var (--text); (--context): 
+		var (--text)  (.fontfamily): 'Noto Sanc', 'Monaco', 'Bank Gothic', 'Sauber Script', //
+		                            'Spot Mono', 'Luminari', 'Bodoni SvtyFive OS ITC TT'M sans-serif;
+           
+	On  *(--Text) {  
+        paths: {
+		var * << Hover-Text >> : (".fontfamily"): << "Brush Script MT", "Brill",  "Domain Diisplay", "Santra Fe LET" >> ; 
+	}   //
+		.
+		{ 
+		     var * << Hover-Typing >> : (".fontfamily"): << "Brill", "Quotes-Caps" "Portagol TC TT", "Princetowwn LET" >> . 
+}  
+		//
+		on "SYSTEM" { 
+			var  : (.font)  
+paths: 
+      var (.font-size): 14px;
+      var (.line-height): String = 1.6;
+      var (.min-height) : String = 1920vh;
+      var (.padding) : String = (32px ; 24px) ;
+  }
+	push on: (.container-{ max-width)) >> 
+			      var  < * pixels(.opacity) * / : String = 9780px; margin: 80 auto;) // 
+	path: /
+        * Header */
+{ 
+	* .header 
+	{ 
+	display(".Type")      String = <<"flex" "Horizontal", "Grouped", "Mixed", "Interaction", "Navigation", 
+	align-items(".Type")  String = << "focus-center" >> ;
+//
+	gap: 11px;
+        margin-bottom:  42px; 
+        padding-bottom: 24px;
+	border-bottom:  1.15px solid var (--border) : "11" ;
+}
+//
+  .logo {
+    
+	  width: 28px; height: 28px;
+    
+	  background: #fff;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    flex-shrink: 0;
+  }
+
+  .header h1 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: 0.02em;
+  }
+
+  .header span {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--dim);
+    margin-left: auto;
+  }
+
+  /* Section */
+  .section { margin-bottom: 36px; }
+
+  .section-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--dim);
+    margin-bottom: 12px;
+    padding-left: 2px;
+  }
+
+  /* Command Block */
+  .cmd-block {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 8px;
+    transition: border-color 0.15s;
+  }
+
+  .cmd-block:hover { border-color: #404040; }
+
+  .cmd-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    cursor: pointer;
+  }
+
+  .cmd-header code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: #fff;
+    flex: 1;
+  }
+
+  .cmd-header code .kw { color: var(--blue); }
+  .cmd-header code .flag { color: var(--yellow); }
+  .cmd-header code .val { color: var(--green); }
+  .cmd-header code .path { color: var(--dim); }
+
+  .tag {
+    font-size: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    padding: 2px 7px;
+    border-radius: 4px;
+    letter-spacing: 0.04em;
+    font-weight: 600;
+  }
+
+  .tag-link { background: #1a2a1f; color: var(--green); }
+  .tag-opt  { background: #1a1f2a; color: var(--blue); }
+  .tag-bool { background: #2a1f1a; color: var(--yellow); }
+  .tag-str  { background: #221a2a; color: #b08fff; }
+
+  .desc {
+    padding: 0 16px 12px 16px;
+    font-size: 12.5px;
+    color: #666;
+    line-height: 1.5;
+  }
+
+  .desc code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--green);
+    background: #0f2a1e;
+    padding: 1px 5px;
+    border-radius: 3px;
+  }
+
+  /* Config Block */
+  .config-block {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 8px;
+  }
+
+  .config-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--dim);
+    padding: 10px 16px 6px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .config-title .dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--muted);
+  }
+
+  pre {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12.5px;
+    padding: 14px 16px;
+    color: var(--text);
+    line-height: 1.7;
+    overflow-x: auto;
+  }
+
+  pre .key { color: #b08fff; }
+  pre .str { color: var(--green); }
+  pre .bool { color: var(--yellow); }
+  pre .punc { color: var(--dim); }
+
+  /* Options Grid */
+  .opts-grid {
+    display: grid;
+    gap: 6px;
+  }
+
+  .opt-row {
+    display: grid;
+    grid-template-columns: 200px 60px 1fr;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+  }
+
+  .opt-row .flag { color: var(--yellow); }
+  .opt-row .type { color: var(--dim); font-size: 10px; }
+  .opt-row .note { color: #555; font-family: 'DM Sans', sans-serif; font-size: 12px; }
+
+  /* Divider */
+  hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+
+  /* Footer */
+  .footer {
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 11px;
+    color: var(--dim);
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* Animate in */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .section { animation: fadeUp 0.3s ease both; }
+  .container > .section:nth-child(1) { animation-delay: 0.00s; }
+  .container > .section:nth-child(2) { animation-delay: 0.07s; }
+  .container > .section:nth-child(3) { animation-delay: 0.14s; }
+  .container > .section:nth-child(4) { animation-delay: 0.21s; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="logo"></div>
+    <h1>Vercel CLI</h1>
+    <span>vercel link · config · global options</span>
+  </div>
+
+  <!-- vercel link -->
+  <div class="section">
+    <div class="section-title">vercel link — Commands</div>
+
+    <div class="cmd-block">
+      <div class="cmd-header">
+        <code><span class="kw">vercel</span> link</code>
+        <span class="tag tag-link">link</span>
+      </div>
+      <div class="desc">Link current directory to a Vercel project interactively.</div>
+    </div>
+
+    <div class="cmd-block">
+      <div class="cmd-header">
+        <code><span class="kw">vercel</span> link <span class="path">[path-to-directory]</span></code>
+        <span class="tag tag-opt">optional</span>
+      </div>
+      <div class="desc">Link a specific directory path instead of current working directory.</div>
+    </div>
+
+    <div class="cmd-block">
+      <div class="cmd-header">
+        <code><span class="kw">vercel</span> link <span class="flag">--repo</span></code>
+        <span class="tag tag-opt">flag</span>
+      </div>
+      <div class="desc">Link using the repository URL instead of the project name.</div>
+    </div>
+
+    <div class="cmd-block">
+      <div class="cmd-header">
+        <code><span class="kw">vercel</span> link <span class="flag">--yes</span></code>
+        <span class="tag tag-opt">flag</span>
+      </div>
+      <div class="desc">Skip all confirmation prompts — auto-confirm everything.</div>
+    </div>
+
+    <div class="cmd-block">
+      <div class="cmd-header">
+        <code><span class="kw">vercel</span> link <span class="flag">--yes</span> <span class="flag">--project</span> <span class="val">foo</span></code>
+        <span class="tag tag-opt">flag</span>
+      </div>
+      <div class="desc">Auto-confirm and link to a specific project named <code>foo</code>.</div>
+    </div>
+  </div>
+
+  <!-- Global Options -->
+  <div class="section">
+    <div class="section-title">Global Options</div>
+    <div class="opts-grid">
+      <div class="opt-row">
+        <span class="flag">--cwd ~/path-to/project</span>
+        <span class="type">String</span>
+        <span class="note">Set working directory for the command</span>
+      </div>
+      <div class="opt-row">
+        <span class="flag">--debug</span>
+        <span class="type">Boolean</span>
+        <span class="note">Enable verbose debug output</span>
+      </div>
+      <div class="opt-row">
+        <span class="flag">--global-config &lt;path&gt;</span>
+        <span class="type">String</span>
+        <span class="note">Custom path to global config directory</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Config JSON -->
+  <div class="section">
+    <div class="section-title">config.json — Fields</div>
+
+    <div class="config-block">
+      <div class="config-title">
+        <div class="dot"></div>
+        currentTeam · Type: String
+      </div>
+      <pre><span class="punc">{</span>
+  <span class="key">"currentTeam"</span><span class="punc">:</span> <span class="str">"team_ofwUZockJlL53hINUGCc1ONW"</span>
+<span class="punc">}</span></pre>
+    </div>
+
+    <div class="config-block">
+      <div class="config-title">
+        <div class="dot"></div>
+        collectMetrics · Type: Boolean
+      </div>
+      <pre><span class="punc">{</span>
+  <span class="key">"collectMetrics"</span><span class="punc">:</span> <span class="bool">true</span>
+<span class="punc">}</span></pre>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <span>vercel link --help</span>
+    <span>docs.vercel.com/cli</span>
+  </div>
+
+</div>
+</body>
+</html>
