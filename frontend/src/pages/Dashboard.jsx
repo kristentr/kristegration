@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { useAuth } from '../contexts/AuthContext';
 import TaskList from '../components/TaskList';
@@ -99,8 +100,7 @@ const Dashboard = ({ socket }) => {
         <div className="lg:col-span-2">
           <TaskForm onSubmit={(data) => createMutation.mutate(data)} />
           <TaskList 
-            tasks={tasks || []} 
-            onUpdate={updateMutation.mutate}
+            tasks={tasks || []}
           />
         </div>
         <div className="space-y-4">
